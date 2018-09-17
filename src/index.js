@@ -9,6 +9,11 @@ class App extends Component {
         }
     }
 
+    componentDidMount() {
+        return fetch('http://localhost:8000')
+            .then(Response => Response.json())
+            .then(ResponseJSON => this.setState({studentList: ResponseJSON}))
+    }
     render(){
         return(
             <div>
